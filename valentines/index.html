@@ -30,3 +30,48 @@
 </div>
 <p class="hover">- hover over the text -</p>
 </div>
+
+<script>
+  // Define an array of messages
+var messages = [
+  "Remember not to eat too much candy—you're sweet enough already.",
+  "Keep shining bright like the star you are!",
+  "You're amazing just the way you are.",
+  "Believe in yourself and your dreams will come true."
+];
+
+// Get the element with the class .text
+var textElement = document.querySelector('.text');
+
+// Define a counter to keep track of the current message index
+var counter = 0;
+
+// Variable to track hover state
+var isHovered = false;
+
+// Function to update the content every 3 seconds
+function updateContent() {
+  if (isHovered) {
+    textElement.setAttribute('data-content', messages[counter]);
+    counter = (counter + 1) % messages.length; // Increment counter and reset if it exceeds the length of the messages array
+  }
+}
+
+// Call the updateContent function every 3 seconds
+var intervalId = setInterval(updateContent, 3000);
+
+// Event listener for when the element is hovered over
+textElement.addEventListener('mouseenter', function() {
+  isHovered = true;
+  clearInterval(intervalId); // Stop the interval to prevent automatic text change
+  updateContent(); // Update the content immediately
+});
+
+// Event listener for when the element is not hovered over
+textElement.addEventListener('mouseleave', function() {
+  isHovered = false;
+  // Restart the interval when the element is not hovered over
+  intervalId = setInterval(updateContent, 3000);
+});
+
+</script>
