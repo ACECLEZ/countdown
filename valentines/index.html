@@ -30,3 +30,11 @@
 </div>
 <p class="hover">- hover in the centre -</p>
 </div>
+
+<script>
+  document.querySelector('.text').addEventListener('animationiteration', function(event) {
+  if (event.elapsedTime >= 2) {
+    window.location.href = 'https://www.example.com'; // Redirect to the specified URL
+  }
+});
+</script>
