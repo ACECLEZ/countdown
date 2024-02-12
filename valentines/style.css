@@ -179,8 +179,9 @@ body {
   text-align: center;
 }
 
-.text:hover div {
+.text:hover span {
   display: none;
+  position: absolute;
 }
 /*
 .text:hover:before {
