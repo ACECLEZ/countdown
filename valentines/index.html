@@ -36,4 +36,20 @@
 document.getElementById('note').addEventListener('click', function() {
   window.location.href = 'https://peing.net/zh-CN/lemon071209';
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the current date
+    var currentDate = new Date();
+
+    // Set the target date
+    var targetDate = new Date("2024-02-14");
+
+    // Check if the current date is not equal to the target date
+    if (currentDate.getTime() !== targetDate.getTime()) {
+        // Redirect to another site
+        window.location.href = "/blocked";
+    }
+});
+
 </script>
+<noscript>enable javascript in your browser to continue</noscript>
