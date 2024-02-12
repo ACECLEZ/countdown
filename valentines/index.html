@@ -1,5 +1,30 @@
 <link rel="stylesheet" href="/valentines/style.css">
 
+<script defer>
+  var currentDate = new Date();
+  var targetDate = new Date("2024-02-14");
+  if (currentDate.getTime() !== targetDate.getTime()) {
+    window.location.href = "/blocked";
+  }
+
+  document.getElementById('note').addEventListener('click', function () {
+    window.location.href = 'https://peing.net/zh-CN/lemon071209';
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var currentDate = new Date();
+    var targetDate = new Date("2024-02-14");
+    if (currentDate.getTime() !== targetDate.getTime()) {
+      window.location.href = "/blocked";
+    }
+  });
+
+
+
+</script>
+
+<noscript>enable javascript in your browser to continue</noscript>
+
 <div class="happy-valentines">
   <div class="valentines-day-card">
     <div class="clouds"></div>
@@ -31,28 +56,3 @@
   <p class="hover" id="note">-👉 leave me a message 👈-</p>
 
 </div>
-
-<script>
-  var currentDate = new Date();
-  var targetDate = new Date("2024-02-14");
-  if (currentDate.getTime() !== targetDate.getTime()) {
-    window.location.href = "/blocked";
-  }
-
-  document.getElementById('note').addEventListener('click', function () {
-    window.location.href = 'https://peing.net/zh-CN/lemon071209';
-  });
-
-  document.addEventListener("DOMContentLoaded", function () {
-    var currentDate = new Date();
-    var targetDate = new Date("2024-02-14");
-    if (currentDate.getTime() !== targetDate.getTime()) {
-      window.location.href = "/blocked";
-    }
-  });
-
-
-
-</script>
-
-<noscript>enable javascript in your browser to continue</noscript>
