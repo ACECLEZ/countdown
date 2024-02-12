@@ -194,7 +194,7 @@ body {
   content: "Remember not to eat too much candy—you're sweet enough already.";
   font-size: 25px;
   opacity: 0; /* Start with the content hidden */
-  transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+  transition: opacity 0.8s ease-in-out; /* Smooth transition for opacity */
 }
 
 .text:hover:before {
@@ -211,7 +211,7 @@ body {
 
 /* Apply the animation to the :hover state */
 .text:hover:before {
-  animation: changeContent 12s infinite; /* Repeat the animation infinitely */
+  animation: changeContent 15s infinite; /* Repeat the animation infinitely */
 }
 
 
