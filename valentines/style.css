@@ -182,12 +182,38 @@ body {
 .text:hover span {
   display: none;
 }
-
+/*
 .text:hover:before {
   content:"Remember not to eat too much candy—you're sweet enough already.";
   font-size:25px;
 
 }
+*/
+/**/
+.text:before {
+  content: "Remember not to eat too much candy—you're sweet enough already.";
+  font-size: 25px;
+  opacity: 0; /* Start with the content hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+}
+
+.text:hover:before {
+  opacity: 1; /* Show the content on hover */
+}
+
+/* Keyframe animation to cycle through different text content */
+@keyframes changeContent {
+  0%, 100% { content: "Remember not to eat too much candy—you're sweet enough already."; }
+  25% { content: "Keep shining bright like the star you are!"; }
+  50% { content: "You're amazing just the way you are."; }
+  75% { content: "Believe in yourself and your dreams will come true."; }
+}
+
+/* Apply the animation to the :hover state */
+.text:hover:before {
+  animation: changeContent 12s infinite; /* Repeat the animation infinitely */
+}
+
 
 footer {
   position: fixed;
