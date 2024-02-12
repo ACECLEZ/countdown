@@ -179,7 +179,7 @@ body {
   text-align: center;
 }
 
-.text:hover span {
+.text:hover div {
   display: none;
 }
 /*
@@ -211,7 +211,7 @@ body {
 
 /* Apply the animation to the :hover state */
 .text:hover:before {
-  animation: changeContent 15s infinite; /* Repeat the animation infinitely */
+  animation: changeContent 12s infinite; /* Repeat the animation infinitely */
 }
 
 
