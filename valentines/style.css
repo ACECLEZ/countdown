@@ -204,15 +204,20 @@ body {
 
 /* Keyframe animation to cycle through different text content */
 @keyframes changeContent {
-  0%, 100% { content: "Remember not to eat too much candy—you're sweet enough already."; }
-  25% { content: "Keep shining bright like the star you are!"; }
-  50% { content: "You're amazing just the way you are."; }
-  75% { content: "Believe in yourself and your dreams will come true."; }
+  0%, 100% { content: "2020 你单身"; }
+  15% { content: "2021 你依然单身"; }
+  30% { content: "2022 你还是单身"; }
+  45% { content: "2023 你又是单身"; }
+  60% { content: "2024 不出意外还是单身🤦‍♂️"; }
+  75% { content: "（既然同为单身狗那互嘲一下"; }
+  90% { content: "问：情人节怎么过"; }
+  99% { content: "答：略过"; }
 }
+
 
 /* Apply the animation to the :hover state */
 .text:hover:before {
-  animation: changeContent 12s infinite; /* Repeat the animation infinitely */
+  animation: changeContent 18s infinite; /* Repeat the animation infinitely */
 }
 
 
