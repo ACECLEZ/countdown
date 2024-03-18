@@ -35,7 +35,6 @@
 </div>
 <style>
 
-/* general styling */
 :root {
   --smaller: .75;
 }
@@ -149,8 +148,10 @@ li span {
           document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
 
         //do something later when date is reached
+        //its just so insane... I remember coding this part back in july 2023 when I'm still bubbled with unrealistic imaginations
+        //- 18/3/24
         if (distance < 0) {
-          window.location.replace("*");
+          window.location.replace("https://countdown-zs.vercel.app/happy_birthday");
         }
       }, 0)
   }());
