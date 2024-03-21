@@ -1,69 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="google" content="notranslate">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="生日快乐鸭~">
+  <meta name="description" content="生日快乐鸭~">
   <title>嗨起来~</title>
   <meta property="og:image" content="https://i.ibb.co/9TYbQLq/confetti-1.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="生日快乐彩花">
-  <link rel="icon" href="https://i.ibb.co/9TYbQLq/confetti-1.png" type="image/x-icon"
-    alt="生日快乐彩花">
+  <link rel="icon" href="https://i.ibb.co/9TYbQLq/confetti-1.png" type="image/x-icon" alt="生日快乐彩花">
   <meta name="robots" content="index, follow">
   <meta name="canonical" href="https://countdown-zs.vercel.app/">
-  <meta name="keywords"
-    content="zs, countdown, birthday, zhishan, 芷杉, vercel, celebrate, 生日快乐, 芷杉生日快乐, 小惊喜">
+  <meta name="keywords" content="zs, countdown, birthday, zhishan, 芷杉, vercel, celebrate, 生日快乐, 芷杉生日快乐, 小惊喜">
   <meta name="referrer" content="no-referrer-when-downgrade">
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
   <!--end of manifest data-->
 
-<link rel="stylesheet" href="/valentines/style.css">
+  <link rel="stylesheet" href="/valentines/style.css">
 
-<div class="happy-valentines">
-  <div class="valentines-day-card">
-    <div class="clouds"></div>
-    <div class="hearts">
-      <div class="heartOne">
-        <div class="left-side"></div>
-        <div class="right-side"></div>
+  <div class="happy-valentines">
+    <div class="valentines-day-card">
+      <div class="clouds"></div>
+      <div class="hearts">
+        <div class="heartOne">
+          <div class="left-side"></div>
+          <div class="right-side"></div>
+        </div>
+        <div class="heartTwo">
+          <div class="left-side"></div>
+          <div class="right-side"></div>
+        </div>
+        <div class="heartThree">
+          <div class="left-side"></div>
+          <div class="right-side"></div>
+        </div>
+        <div class="heartFour">
+          <div class="left-side"></div>
+          <div class="right-side"></div>
+        </div>
+        <div class="heartFive">
+          <div class="left-side"></div>
+          <div class="right-side"></div>
+        </div>
       </div>
-      <div class="heartTwo">
-        <div class="left-side"></div>
-        <div class="right-side"></div>
-      </div>
-      <div class="heartThree">
-        <div class="left-side"></div>
-        <div class="right-side"></div>
-      </div>
-      <div class="heartFour">
-        <div class="left-side"></div>
-        <div class="right-side"></div>
-      </div>
-      <div class="heartFive">
-        <div class="left-side"></div>
-        <div class="right-side"></div>
-      </div>
+      <div class="text"><span>Happy Valentine's</br> Day!</div>
     </div>
-    <div class="text"><span>Happy Valentine's</br> Day!</div>
+    <p class="hover">- hover in the centre -</p>
+    <!--<p class="hover" id="note">-👉 leave me a message 👈-</p>-->
   </div>
-  <p class="hover">- hover in the centre -</p>
-  <!--<p class="hover" id="note">-👉 leave me a message 👈-</p>-->
-</div>
 
-<audio src="/song.mp3"></audio>
+  <audio id="zsmp3" src="/song.mp3"></audio>
 
-<script>
+  <script>
 
-window.addEventListener("DOMContentLoaded", event => {
-  const audio = document.querySelector("audio");
-  audio.volume = 1.0;
-  audio.play();
-});
+    function playAudio() {
+      const audio = document.getElementById("zsmp3");
+      audio.volume = 1.0;
+      audio.play();
+    }
 
-</script>
+    window.addEventListener("DOMContentLoaded", event => {
+      playAudio();
+    });
+
+  </script>
