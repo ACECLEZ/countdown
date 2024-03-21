@@ -56,6 +56,14 @@
   <!--<p class="hover" id="note">-👉 leave me a message 👈-</p>-->
 </div>
 
-<audio id="myAudio" loop autoplay>
-  <source src="/song.mp3" type="audio/mpeg">
-</audio>
+<audio src="/song.mp3"></audio>
+
+<script>
+
+window.addEventListener("DOMContentLoaded", event => {
+  const audio = document.querySelector("audio");
+  audio.volume = 1.0;
+  audio.play();
+});
+
+</script>
