@@ -117,6 +117,7 @@
           content.style.opacity = '1.0';// Show the content after a delay
         }, 1000); // 1.2 seconds delay
         var audio = new Audio('https://countdown-zs.vercel.app/song.mp3');
+        audio.currentTime = 5; // Skip the first 5 seconds
         audio.play();
       });
     });
