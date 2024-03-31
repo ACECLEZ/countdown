@@ -23,54 +23,44 @@
 
   <link rel="stylesheet" href="/valentines/style.css">
   <div id="content" class="content">
-  <div class="happy-valentines">
-    <div class="valentines-day-card">
-      <div class="clouds"></div>
-      <div class="hearts">
-        <div class="heartOne">
-          <div class="left-side"></div>
-          <div class="right-side"></div>
+    <div class="happy-valentines">
+      <div class="valentines-day-card">
+        <div class="clouds"></div>
+        <div class="hearts">
+          <div class="heartOne">
+            <div class="left-side"></div>
+            <div class="right-side"></div>
+          </div>
+          <div class="heartTwo">
+            <div class="left-side"></div>
+            <div class="right-side"></div>
+          </div>
+          <div class="heartThree">
+            <div class="left-side"></div>
+            <div class="right-side"></div>
+          </div>
+          <div class="heartFour">
+            <div class="left-side"></div>
+            <div class="right-side"></div>
+          </div>
+          <div class="heartFive">
+            <div class="left-side"></div>
+            <div class="right-side"></div>
+          </div>
         </div>
-        <div class="heartTwo">
-          <div class="left-side"></div>
-          <div class="right-side"></div>
-        </div>
-        <div class="heartThree">
-          <div class="left-side"></div>
-          <div class="right-side"></div>
-        </div>
-        <div class="heartFour">
-          <div class="left-side"></div>
-          <div class="right-side"></div>
-        </div>
-        <div class="heartFive">
-          <div class="left-side"></div>
-          <div class="right-side"></div>
-        </div>
+        <div class="text"><span>Happy Valentine's</br> Day!</div>
       </div>
-      <div class="text"><span>Happy Valentine's</br> Day!</div>
+      <p class="hover">- hover in the centre -</p>
+      <!--<p class="hover" id="note">-👉 leave me a message 👈-</p>-->
     </div>
-    <p class="hover">- hover in the centre -</p>
-    <!--<p class="hover" id="note">-👉 leave me a message 👈-</p>-->
   </div>
-</div>
-  <!--
-  <audio autoplay>
-    <source src="https://countdown-zs.vercel.app/song.mp3" type="audio/mpeg">
-  </audio>
-
-  <audio id="zsmp3" src="https://countdown-zs.vercel.app/song.mp3"></audio>
--->
-
-
-  <!-- Trigger the function when the page is loaded -->
-  <script>
-    window.onload = function () {
-      playAudio();
-    };
-  </script>
 
   <style>
+    @font-face {
+      font-family: chinesecali;
+      src: url(https://countdown-zs.vercel.app/fonts/LongCang-Regular.ttf);
+    }
+
     .overlay {
       position: fixed;
       top: 0;
@@ -95,17 +85,18 @@
     .button {
       padding: 10px 20px;
       font-size: 18px;
-      background-color: #4CAF50;
+      background-color: #ff4d6d;
       /* Green */
       border: none;
       color: white;
       cursor: pointer;
       border-radius: 5px;
       outline: none;
+      font-family: chinesecali;
     }
 
     .button:hover {
-      background-color: #45a049;
+      background-color: #fa3e60;
       /* Darker green */
     }
   </style>
@@ -113,22 +104,20 @@
     <button id="showContentButton" class="button">Show Content</button>
   </div>
 
-  
-
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var overlay = document.getElementById('overlay');
-        var content = document.getElementById('content');
-        var showContentButton = document.getElementById('showContentButton');
+    document.addEventListener("DOMContentLoaded", function () {
+      var overlay = document.getElementById('overlay');
+      var content = document.getElementById('content');
+      var showContentButton = document.getElementById('showContentButton');
 
-        showContentButton.addEventListener('click', function() {
-            overlay.style.transform = 'translateY(-100%)'; // Slide up the overlay
-                            setTimeout(function() {
-                content.style.display = 'block';
-                content.style.opacity = '1.0';// Show the content after a delay
-            }, 1000); // 1.2 seconds delay
-            var audio = new Audio('https://countdown-zs.vercel.app/song.mp3');
-                audio.play();
-        });
+      showContentButton.addEventListener('click', function () {
+        overlay.style.transform = 'translateY(-100%)'; // Slide up the overlay
+        setTimeout(function () {
+          content.style.display = 'block';
+          content.style.opacity = '1.0';// Show the content after a delay
+        }, 1000); // 1.2 seconds delay
+        var audio = new Audio('https://countdown-zs.vercel.app/song.mp3');
+        audio.play();
+      });
     });
-</script>
+  </script>
