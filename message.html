@@ -1,74 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>悄悄话~</title>
-  <meta property="og:image" content="https://i.ibb.co/9TYbQLq/confetti-1.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="生日快乐彩花">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>悄悄话~</title>
+    <meta property="og:image" content="https://i.ibb.co/9TYbQLq/confetti-1.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="生日快乐彩花">
+    <link rel="icon" href="https://i.ibb.co/9TYbQLq/confetti-1.png" type="image/x-icon" alt="生日快乐彩花">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <div class="container">
-    <textarea id="message" placeholder="想对我说什么吗XD everything or anything under the sun's welcomed~"></textarea>
-    <button id="clicker">发送信息</button>
-  </div>
+    <div class="container">
+        <textarea id="message" placeholder="想对我说什么吗XD everything or anything under the sun's welcomed~"></textarea>
+        <button id="clicker">发送信息</button>
+    </div>
 
-<style>
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
 
-.container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-textarea {
-  width: 100%;
-  height: 100px;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-button:hover {
-  background-color: #0056b3;
-}
-</style>
-<script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore-compat.js"></script>
-  
-<script>
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore-compat.js"></script>
 
-fetch('https://api.ipify.org?format=json')
-    .then(response => response.json())
-    .then(data => {
-        IP_ADDRESS = data.ip;
-    });
+    <script>
+
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                IP_ADDRESS = data.ip;
+            });
 
 
-// Initialize Firebase
-            const firebaseConfig = {
+        // Initialize Firebase
+        const firebaseConfig = {
             apiKey: "AIzaSyCYSk0HXHG95GOonnTKArVGz0d9gjMgpEA",
             authDomain: "bxw24-7b088.firebaseapp.com",
             databaseURL: "https://bxw24-7b088-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -77,37 +80,39 @@ fetch('https://api.ipify.org?format=json')
             messagingSenderId: "179666229999",
             appId: "1:179666229999:web:3366b9c6837540b607191a",
             measurementId: "G-274TPQS11W"
-            };
+        };
 
-firebase.initializeApp(firebaseConfig);
+        firebase.initializeApp(firebaseConfig);
 
-// Get a reference to the Firestore service
-const db = firebase.firestore();
+        // Get a reference to the Firestore service
+        const db = firebase.firestore();
 
-// Get DOM elements
-const messageInput = document.getElementById('message');
-const postButton = document.getElementById('clicker');
+        // Get DOM elements
+        const messageInput = document.getElementById('message');
+        const postButton = document.getElementById('clicker');
 
-// Add click event listener to postButton
-postButton.addEventListener('click', () => {
-  const messageText = messageInput.value.trim();
+        // Add click event listener to postButton
+        postButton.addEventListener('click', () => {
+            const messageText = messageInput.value.trim();
 
-  if (messageText !== '') {
-    // Add message to Firestore database
-    db.collection("messages").add({
-      ip:IP_ADDRESS,
-      text: messageText,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp()
-    })
-    .then(() => {
-      console.log("Message successfully posted!");
-      // Clear input field after posting
-      messageInput.value = '';
-    })
-    .catch((error) => {
-      console.error("Error posting message: ", error);
-    });
-  }
-});
+            if (messageText !== '') {
+                // Add message to Firestore database
+                db.collection("messages").add({
+                    ip: IP_ADDRESS,
+                    text: messageText,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                })
+                    .then(() => {
+                        alert("谢谢~！！ :)");
+                        console.log("Message successfully posted!");
+                        // Clear input field after posting
+                        messageInput.value = '';
+                    })
+                    .catch((error) => {
+                        alert("谢谢~！！ :)");
+                        console.error("Error posting message: ", error);
+                    });
+            }
+        });
 
-</script>
+    </script>
