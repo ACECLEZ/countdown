@@ -68,9 +68,6 @@
             .then(data => {
                 IP_ADDRESS = data.ip;
             });
-
-
-        // Initialize Firebase
         const firebaseConfig = {
             apiKey: "AIzaSyCYSk0HXHG95GOonnTKArVGz0d9gjMgpEA",
             authDomain: "bxw24-7b088.firebaseapp.com",
@@ -81,22 +78,13 @@
             appId: "1:179666229999:web:3366b9c6837540b607191a",
             measurementId: "G-274TPQS11W"
         };
-
         firebase.initializeApp(firebaseConfig);
-
-        // Get a reference to the Firestore service
         const db = firebase.firestore();
-
-        // Get DOM elements
         const messageInput = document.getElementById('message');
         const postButton = document.getElementById('clicker');
-
-        // Add click event listener to postButton
         postButton.addEventListener('click', () => {
             const messageText = messageInput.value.trim();
-
             if (messageText !== '') {
-                // Add message to Firestore database
                 db.collection("messages").add({
                     ip: IP_ADDRESS,
                     text: messageText,
@@ -105,7 +93,6 @@
                     .then(() => {
                         alert("谢谢~！！ :)");
                         console.log("Message successfully posted!");
-                        // Clear input field after posting
                         messageInput.value = '';
                     })
                     .catch((error) => {
