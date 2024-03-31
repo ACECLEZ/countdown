@@ -51,7 +51,14 @@
         <div class="text"><span>Happy Valentine's</br> Day!</div>
       </div>
       <p class="hover">- hover in the centre -</p>
-      <!--<p class="hover" id="note">-👉 leave me a message 👈-</p>-->
+      <p class="hover" id="note">-👉 leave me a message 👈-</p>
+      <script>
+        const note = document.getElementById('note');
+        note.addEventListener('click', () => {
+          window.location.href = 'https://countdown-zs.vercel.app/message';
+        });
+      </script>
+
     </div>
   </div>
 
