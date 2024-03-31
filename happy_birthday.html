@@ -53,22 +53,22 @@
     <p class="hover">- hover in the centre -</p>
     <!--<p class="hover" id="note">-👉 leave me a message 👈-</p>-->
   </div>
+  <!--
   <audio autoplay>
     <source src="https://countdown-zs.vercel.app/song.mp3" type="audio/mpeg">
   </audio>
 
   <audio id="zsmp3" src="https://countdown-zs.vercel.app/song.mp3"></audio>
-
+-->
   <script>
-
-    function playAudio() {
-      const audio = document.getElementById("zsmp3");
-      audio.volume = 1.0;
-      audio.play();
-    }
-
-    window.addEventListener("DOMContentLoaded", event => {
-      playAudio();
-    });
-
+window.onload = function() {
+  playAudio();
+};
+function playAudio() {
+  var result = prompt("Click OK to play the MP3");
+  if (result !== null) {
+    var audio = new Audio("https://countdown-zs.vercel.app/song.mp3");
+    audio.play();
+  }
+}
   </script>
