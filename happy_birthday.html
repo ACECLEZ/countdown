@@ -22,7 +22,7 @@
   <!--end of manifest data-->
 
   <link rel="stylesheet" href="/valentines/style.css">
-
+  <div id="content" class="content">
   <div class="happy-valentines">
     <div class="valentines-day-card">
       <div class="clouds"></div>
@@ -53,6 +53,7 @@
     <p class="hover">- hover in the centre -</p>
     <!--<p class="hover" id="note">-👉 leave me a message 👈-</p>-->
   </div>
+</div>
   <!--
   <audio autoplay>
     <source src="https://countdown-zs.vercel.app/song.mp3" type="audio/mpeg">
@@ -60,24 +61,84 @@
 
   <audio id="zsmp3" src="https://countdown-zs.vercel.app/song.mp3"></audio>
 -->
-<script>
-  function playAudio() {
-    // Show an alert prompt
-    var result = prompt("Click OK to play the MP3");
-    // If the user clicks OK, play the audio
-    if (result !== null) {
-      var audio = new Audio("https://countdown-zs.vercel.app/song.mp3");
-      audio.oncanplaythrough = function() {
-        audio.play();
-      };
+  <script>
+    function playAudio() {
+      // Show an alert prompt
+      var result = prompt("Click OK to play the MP3");
+      // If the user clicks OK, play the audio
+      if (result !== null) {
+        var audio = new Audio("https://countdown-zs.vercel.app/song.mp3");
+        audio.oncanplaythrough = function () {
+          audio.play();
+        };
+      }
     }
-  }
   </script>
-  
+
   <!-- Trigger the function when the page is loaded -->
   <script>
-  window.onload = function() {
-    playAudio();
-  };
+    window.onload = function () {
+      playAudio();
+    };
   </script>
+
+  <style>
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      /* Black with some transparency */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 1.2s ease;
+      /* Transition effect */
+    }
+
+    .content {
+      display: block;
+      opacity: 0.2;
+      /* Hide content by default */
+    }
+
+    .button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      /* Green */
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+      /* Darker green */
+    }
+  </style>
+  <div id="overlay" class="overlay">
+    <button id="showContentButton" class="button">Show Content</button>
+  </div>
+
   
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var overlay = document.getElementById('overlay');
+        var content = document.getElementById('content');
+        var showContentButton = document.getElementById('showContentButton');
+
+        showContentButton.addEventListener('click', function() {
+            overlay.style.transform = 'translateY(-100%)'; // Slide up the overlay
+                            setTimeout(function() {
+                content.style.display = 'block';
+                content.style.opacity = '1.0';// Show the content after a delay
+            }, 1000); // 1.2 seconds delay
+        });
+    });
+</script>
