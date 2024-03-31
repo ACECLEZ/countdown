@@ -60,15 +60,24 @@
 
   <audio id="zsmp3" src="https://countdown-zs.vercel.app/song.mp3"></audio>
 -->
-  <script>
-window.onload = function() {
-  playAudio();
-};
-function playAudio() {
-  var result = prompt("Click OK to play the MP3");
-  if (result !== null) {
-    var audio = new Audio("https://countdown-zs.vercel.app/song.mp3");
-    audio.play();
+<script>
+  function playAudio() {
+    // Show an alert prompt
+    var result = prompt("Click OK to play the MP3");
+    // If the user clicks OK, play the audio
+    if (result !== null) {
+      var audio = new Audio("https://countdown-zs.vercel.app/song.mp3");
+      audio.oncanplaythrough = function() {
+        audio.play();
+      };
+    }
   }
-}
   </script>
+  
+  <!-- Trigger the function when the page is loaded -->
+  <script>
+  window.onload = function() {
+    playAudio();
+  };
+  </script>
+  
